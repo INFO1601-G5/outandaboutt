@@ -12,11 +12,45 @@
 
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
-     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
+    /* I edited this ~Tamia*/
+     .navBar {
+        text-align: center;
+      }
+
+/* Lengthens the search bar*/
+    .navbar-search {
+   max-width: 500px;
+  }
     
+    nav {
+  background-color: #eee;
+  height:75px;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  margin-left: 500px;
+  padding: 0;
+}
+
+li + li {
+  border-left: 1px solid #ccc;
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: #333;
+  padding: 1rem;
+  transition: font-weight 150ms ease-in-out;
+}
+
+a:hover {
+  font-weight: 900;
+}
     /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
@@ -41,29 +75,39 @@
   </head>
   
   <body>
-    <header>Out N' AbouTT</header>
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <section>
                 <a href="#" class="navbar-brand">Out N' AbouTT</a>
+              
+                <div class="flex-grow-1 d-none d-md-block">
+            <div class="input-group my-0 mx-auto navbar-search" action="/action_page.php">
+               <input type="search"
+                      class="form-control"
+                      placeholder="What yuh looking for?"
+                      aria-label="Search"
+                      aria-describedby="button-addon2"
+                      style="margin-left: -125px; margin-right: 125px">
+               <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                       id="button-addon2" style="margin-left: -125px; margin-right: 125px">
+                  Search
+               </button>
+           </div>
+       </div>
                 
-            </section>
-
-            <section>
-                <input type="search"  class="form-control" placeholder="Search..">
-            </section>
-
-            <section>
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
                 <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav mr-auto">
-                        <button type="button"><li class="nav-item"><a href="#" class="text-dark">Events    </a></li></button>
-                        <button type="button"><li class="nav-item"><a href="#" class="text-dark">Trending</a></li></button>
-                        <button type="button"><li class="nav-item"><a href="#" class="text-dark">About Us</a></li></button>
-                        <button type="button"><li class="nav-item"><a href="#" class="text-dark">Contact Us</a></li></button>
+                    <ul class="navbar-nav nav-tabs mr-auto">
+                        <li class="nav-link"><a href="#" class="text-white" style="justify-content: center;
+  align-items: center;">Events</a></li>
+                        <li class="nav-link"><a href="#" class="text-white" style="justify-content: center;
+  align-items: center;">Trending</a></li>
+                        <li class="nav-link"><a href="#" class="text-white" style="justify-content: center;
+  align-items: center;">About Us</a></li>
+                        <li class="nav-link"><a href="#" class="text-white" style="justify-content: center;
+  align-items: center;">Contact Us</a></li>
                     </ul>
                 </div>
-                
-            </section>
         </nav>    <!-- End of navbar -->
 
 
