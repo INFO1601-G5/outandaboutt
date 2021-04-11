@@ -35,10 +35,6 @@
    
    
    
-   
-   
-   
-   
    <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     /* I edited this ~Tamia*/
@@ -46,12 +42,13 @@
         text-align: center;
       }
 
-/* Lengthens the search bar*/
+    /* Lengthens the search bar*/
     .navbar-search {
    max-width: 500px;
   }
     
     nav {
+   text-align: center;
   background-color: #eee;
   height:75px;
 }
@@ -81,12 +78,22 @@ a:hover {
   font-weight: 900;
 }
  
-  .carousel-inner img {
-      size: 50px;
-      width: 100%; /* Set width to 100% */
+
+   /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    
+    .item.active{
+        background-position: center;
+        position:relative;
+    }
+  /*.carousel-inner img {
+      width: 100%;  Set width to 100% 
       margin: auto;
-      min-height:100px;
-  }
+      min-height:200px;
+  } 
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
@@ -95,16 +102,16 @@ a:hover {
     }
   }
 
-
   </style>
   </head>
   
   <body>
 
     <header>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                 <a href="#" class="navbar-brand">Out N' AbouTT</a>
-              
+  
+                          <!-- search bar -->
                 <div class="flex-grow-1 d-none d-md-block">
             <div class="input-group my-0 mx-auto navbar-search" action="/action_page.php">
                <input type="search"
@@ -115,12 +122,12 @@ a:hover {
                       style="margin-left: -125px; margin-right: 125px">
                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
                        id="button-addon2" style="margin-left: -125px; margin-right: 125px">
-                  Search
+                                           Search
                </button>
            </div>
        </div>
                 
-        </nav>
+        </nav> 
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav nav-tabs mr-auto">
@@ -134,11 +141,12 @@ a:hover {
   align-items: center;">Contact Us</a></li>
                     </ul>
                 </div>
-        </nav>    <!-- End of navbar -->
+        </nav>  
 </header>
+<!-- End of navbar -->
 
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- Carousel-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style ="position: relative;">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -147,16 +155,14 @@ a:hover {
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="asset/images/bam 1_.jpg" alt="Image">
+      <div class="item active" style = "height: 450px; background: black; background-image: url(https://cdn.murphysmultiverse.com/wp-content/uploads/2021/03/MY-HERO-1536x864.jpg); background-">
         <div class="carousel-caption">
           <h3>Sell $</h3>
           <p>Money Money.</p>
         </div>      
       </div>
 
-      <div class="item">
-        <img src="asset/images/hawks edit.jpg" alt="Image">
+     <div class="item" style = "height: 450px; background: black; background-image: url(https://media.comicbook.com/2021/04/attack-on-titan-1264015.jpeg?auto=webp&width=1200&height=628&crop=1200:628,smart);" >
         <div class="carousel-caption">
           <h3>More Sell $</h3>
           <p>Lorem ipsum...</p>
@@ -174,8 +180,11 @@ a:hover {
       <span class="sr-only">Next</span>
     </a>
 </div>
-  
-<!--
+
+<!-- end of carousel -->
+
+
+
 <div class="container text-center">    
   <h3>What We Do</h3><br>
   <div class="row">
@@ -197,13 +206,10 @@ a:hover {
     </div>
   </div>
 </div><br>
--->
 
-
-
-  </body>
-
-<footer>
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
 </footer>
-  
+
+</body>
 </html>
