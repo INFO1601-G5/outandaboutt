@@ -1,26 +1,30 @@
       let map;
-      let place = locations[0];
+      let places = locations[0];
     
-
-
       function featuredPlaces(){
-        let placeid = Math.floor(Math.random() * 11);
+        let placeid = Math.floor(Math.random() * locations.length);
+        let featuredPlace=locations[placeid];
         let html='';
-        let featuredPlace=locations[placeid-1];
-        html += `<div class="col">
-          <img src= "${featuredPlace.img_url}" width = "50%" height = "50%">
-                </div>
-                <div class="col">
-                  <p> Name: ${featuredPlace.name}</p>
-                  <p> Description: ${featuredPlace.description}</p>
-                </div>`;
-        document.querySelector('#myCarousel').innerHTML = html;
         
+        html += `<img src= "${featuredPlace.img_url}">
+                <div class="carousel-caption">
+                  <h3>${featuredPlace.name}</h3>
+                  <p>Read more...</p>
+                </div>`;
+        document.querySelector('#item1').innerHTML = html;
 
-
-        showFeaturedLocation(locations[placeid-1])
+        if (placeid==locations.length-1)
+          featuredPlace=locations[placeid-1];
+        else featuredPlace=locations[placeid+1];
+        html='';
+        html += `<img src= "${featuredPlace.img_url}">
+                    <div class="carousel-caption">
+                      <h3>${featuredPlace.name}</h3>
+                      <p>Read more...</p>
+                    </div>`;
+        document.querySelector('#item2').innerHTML = html;
       }
- 
+      featuredPlaces();
 
       function initMap(x,y){
         map = new google.maps.Map(document.getElementById("map"), {
