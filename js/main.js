@@ -1,12 +1,14 @@
       let map;
-      let places = locations[0];
+      let place = locations[0];
     
       function featuredPlaces(){
         let placeid = Math.floor(Math.random() * locations.length);
         let featuredPlace=locations[placeid];
         let html='';
         
-        html += `<img src= "${featuredPlace.img_url}">
+        html += `<a href="#item2" onclick="getLocation(${placeid})" class="item">
+                    <img src= "${featuredPlace.img_url}">
+                </a>
                 <div class="carousel-caption">
                   <h3>${featuredPlace.name}</h3>
                   <p>Read more...</p>
@@ -17,19 +19,22 @@
           featuredPlace=locations[placeid-1];
         else featuredPlace=locations[placeid+1];
         html='';
-        html += `<img src= "${featuredPlace.img_url}">
-                    <div class="carousel-caption">
-                      <h3>${featuredPlace.name}</h3>
-                      <p>Read more...</p>
-                    </div>`;
+        html += `<a href="#item1" onclick="getLocation(${placeid})" class="item">
+                  <img src= "${featuredPlace.img_url}">
+                </a>
+                <div class="carousel-caption">
+                  <h3>${featuredPlace.name}</h3>
+                  <p>Read more...</p>
+                </div>`;
         document.querySelector('#item2').innerHTML = html;
       }
       featuredPlaces();
 
       function initMap(x,y){
         map = new google.maps.Map(document.getElementById("map"), {
-          //center: {lat: locations[0].latitude, lng: locations[0].longitude},
-          center: {lat: x,lng: y},
+          //center: {lat: locations[0].coords.latitude, lng: locations[0].coords.longitude},
+          center: {lat: 60, lng: 80},
+          //center: {lat: x,lng: y},
           zoom: 8,
         });
       }
@@ -48,10 +53,10 @@
         
         const x = new Number(location.latitude);
         const y = new Number (location.longitude);
-        initMap(x,y);
+        //initMap(x,y);
       }
       //initMap(50,80)
-      showLocation(place);
+      //showLocation(place);
 
       function getLocation(id){
         showLocation(place);
