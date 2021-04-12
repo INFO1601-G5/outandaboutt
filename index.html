@@ -176,6 +176,29 @@ li:hover{
 
   }
 
+/* HOVER ELEMENTS */
+
+ .overlay_caption{
+position: absolute; 
+top: 0; 
+left: 0; 
+width: 300px; 
+height: 300px; 
+background: rgba(0, 0, 0, 0.6); 
+color: white; 
+display: flex; 
+align-items: center;
+flex-direction: column; 
+justify-content: center; 
+opacity: 0;
+
+font-family: Arial, Helvetica, sans-serif;
+ }
+
+.overlay_caption:hover{
+opacity: 1;
+}
+
 /* --------- PARALLAX EFFECT BEGINNING  --------*/
   body, html {
   height: 100%;
@@ -265,30 +288,23 @@ li:hover{
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
-</div>
-
-<!-- end of carousel -->
+    </div>
+    <!-- end of carousel -->
 
 <!-- choose experiences-->
 <div class="container text-center"; style = "padding: 3.5%">    
   <h3 id = "Intro" style = "text-align: left; font-family: Arial, Helvetica, sans-serif;">Get Started </h3><br>
   <div class="row">
-    <div class="col-sm-4" >
-      <img src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2018/05/Gradient-Overview-Blog-Image-2.jpg?w=1024&h=500" class="img-responsive" style="width:250x; height: 400px;" alt="Image">
-      <p>Current Project</p>
-    </div>
-    <div class="col-sm-4"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>    
-    </div>
-    <div class="col-sm-4">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>
+
+    <div class="col-sm-4" style="position: relative; width: 100%">
+      <img src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2018/05/Gradient-Overview-Blog-Image-2.jpg?w=1024&h=500" class="img-responsive" style="width: 100%; display:block" alt="Image">
+     
+      <div class = "overlay_caption">
+          <div class = "Image Title"></div>
+          <p id = "image description">Current Project</p> 
+        </div>
+          </div>
+   
   </div>
 </div><br>
 
