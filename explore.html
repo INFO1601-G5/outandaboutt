@@ -88,23 +88,20 @@ a:hover {
       padding: 25px;
     }
     
-    .item.active{
-        background-position: center;
-        position:relative;
-    }
-  .carousel-inner img {
-      width: 100%;
-      margin: auto;
-      min-height:200px;
-  } 
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
-    }
-  }
-
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    
   </style>
   </head>
   
@@ -150,58 +147,9 @@ a:hover {
 <div id="map"></div>
 <div id="placeDetail"></div>
 
-<!-- Carousel-->
-<div id="myCarousel" class="carousel slide" data-ride="carousel" style ="position: relative;">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div id="item1" class="item active" style = "height: 450px;"></div>
-      
-      
-     <div id= "item2" class="item" style = "height: 450px;"></div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<!-- end of carousel -->
 
 
 
-<div class="container text-center">    
-  <h3>What We Do</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
-    </div>
-    <div class="col-sm-4"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>    
-    </div>
-    <div class="col-sm-4">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>
-  </div>
-</div><br>
 
 
 
@@ -211,5 +159,11 @@ a:hover {
     <p>Footer Text</p>
 
   </footer>
+
+      <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+      <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
+       async
+     ></script>
 </body>
 </html>
