@@ -145,8 +145,8 @@ li:hover{
     background: #778833;
 }
  
-
-   /* Add a gray background color and some padding to the footer */
+ /* Carousel related styling */
+    /* Add a gray background color and some padding to the footer */
     footer {
       background-color: #f2f2f2;
       padding: 25px;
@@ -161,13 +161,21 @@ li:hover{
       margin: auto;
       min-height:200px;
   } 
-
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
     .carousel-caption {
       display: none; 
     }
   }
+
+
+  .container.text-center{
+      position: relative;
+      margin-top: 60px;
+      margin-bottom: 20px;
+
+  }
+
 /* --------- PARALLAX EFFECT BEGINNING  --------*/
   body, html {
   height: 100%;
@@ -195,7 +203,7 @@ li:hover{
     <header>
                            <!-- search bar -->
     <nav>
-  <a class="navbar-brand text-white" href="#" style="margin-top: 15px;">Out N' AbouTT</a>
+  <a class="navbar-brand text-white" href="#" style="margin-top: 15px; margin-left: 10px">Out N' AbouTT</a>
 
   <form class="form">
   <input class="search-bar" placeholder="Search something.."></input>
@@ -261,11 +269,12 @@ li:hover{
 
 <!-- end of carousel -->
 
-<div class="container text-center">    
-  <h3>What We Do</h3><br>
+<!-- choose experiences-->
+<div class="container text-center"; style = "padding: 3.5%">    
+  <h3 id = "Intro" style = "text-align: left; font-family: Arial, Helvetica, sans-serif;">Get Started </h3><br>
   <div class="row">
-    <div class="col-sm-4">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+    <div class="col-sm-4" >
+      <img src="https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2018/05/Gradient-Overview-Blog-Image-2.jpg?w=1024&h=500" class="img-responsive" style="width:250x; height: 400px;" alt="Image">
       <p>Current Project</p>
     </div>
     <div class="col-sm-4"> 
@@ -283,6 +292,15 @@ li:hover{
   </div>
 </div><br>
 
+
+
+
+<br>
+<!-- Check out our app -->
+<div id="App-Development Poster" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;background-color: white; padding: 5%;">
+    <h4 > Check out our App (Coming soon) </h4>
+
+</div>
 <div class="parallax"></div>   <!-- PARALLAX EFFECT --->
 
 
