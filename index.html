@@ -169,15 +169,6 @@ li:hover{
   }
 
 
-  .container.text-center{
-      position: relative;
-      margin-top: 60px;
-      margin-bottom: 20px;
-
-  }
-
-
-
 /* --------- PARALLAX EFFECT BEGINNING  --------*/
   body, html {
   height: 100%;
@@ -200,24 +191,33 @@ li:hover{
 
 
 
+  .container.text-center{
+      position: relative;
+  }
+
 
 /* --------- HOVER RELATED STYLINGS ------------ */
 
-.position{
-    margin-left: 30px;
+.Experiences > *{
+    display: inline-block;
+    margin-left: 15px;
 }
+
+
 .image{
     position: relative;
-    width: 400px
+    width: 200px;
   }
 
   .img_load{
     display: block;
-    width: 100%;
+    width: 200px;
+    height: 300px
   }
 
   .overlay{
     position: absolute;
+    float:left;
     top: 0;
     left: 0;
     width: 100%;
@@ -237,14 +237,25 @@ li:hover{
 .overlay > *{
   transform: translateY(20px);
   transition: transform 0.25s;
+    float:left;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
   .overlay:hover{
     opacity: 1;
+    
   }
 
   .overlay:hover > *{
     transform: translateY(0);
   }
+
+  .overlay > p{
+      width: 85%;
+      font-size: 14px;
+  }
+
 
 /* --------- HOVER RELATED STYLINGS END ------------ */
 
@@ -322,28 +333,57 @@ li:hover{
     <!-- end of carousel -->
 
 <!-- choose experiences-->
-<div class="container text-center"; style = "padding: 3.5%">    
-    <h3 id = "Intro" style = "text-align: left; font-family: Arial, Helvetica, sans-serif;">Get Started </h3><br>
-</div>
-
-<div class="position">
-   <div class ="image">
-    <img class = "img_load" src= "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2018/05/Gradient-Overview-Blog-Image-2.jpg?w=1024&h=500" >
+<div class="container text-center"; style = "margin-top: 85px; margin-bottom: 50px;">    
+    <h4 id = "Intro" style = "text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 4.5rem;">Get Started </h4>
+    <p id = "intro-desrc" style = "font-size: 20px; size: 0"> What experience are you looking for </p>
+<br>
     
-    <div class = "overlay">
-      <div class = "image title "> Bricks </div>
-      <p class = "item descr"> Bricks bricks </p>
-    </div>
-</div>
+    <div class="Experiences">
+            <div class ="image">
+                <img class = "img_load" style = "background-image: url(https://www.dontforgettomove.com/wp-content/uploads/2015/02/half-moon-party-dates.jpg); background-position: center;">
+                
+                        <div class = "overlay">
+                <h2> #Party </h2>
+                <p> This is a paragraph needed for testing </p>
+                        </div>
+            </div>
+           
+ <div class ="image">
+                <img class = "img_load" style = "background-image: url(https://www.glassdoor.com/employers/app/uploads/sites/2/2018/08/how-to-hire-waiters-and-waitstaff-823799902.jpg); background-position: center;">
+                
+                        <div class = "overlay">
+                <h2> #Dine </h2>
+                <p> This is a paragraph needed for testing </p>
+                        </div>
+            </div>
+
+             <div class ="image">
+                <img class = "img_load" style = "background-image: url(https://adventurebase--live.s3.eu-west-2.amazonaws.com/uploads/2020/07/accomplishment-action-adult-adventure-372098-scaled-e1601379300758.jpg); background-position: center; background-size: 450px; background-position-x: -250px;">
+                
+                        <div class = "overlay">
+                <h2> #Adventure</h2>
+                <p> This is a paragraph needed for testing </p>
+                        </div>
+            </div>
+
+             <div class ="image">
+               <img class = "img_load" style = "background-image: url(https://images.ctfassets.net/gxwgulxyxxy1/3COVo8aXg9sPJobex5tZnH/0014ccd934f6d8bd21a6e81b70b840dc/Hero_-_A_glorious_tropical_beach__with_blue_sky_and_a_palm_tree.jpg?fm=jpg&fl=progressive&w=1349&h=581&fit=fill&q=100); background-position: center; background-size: inherit;">
+                
+                        <div class = "overlay">
+                <h2> #Relax </h2>
+                <p> This is a paragraph needed for testing </p>
+                        </div>
+            </div>
+            
 </div>
 
-
+</div>
 
 <br>
-<!-- Check out our app -->
+<!-- Check out our app 
 <div id="App-Development Poster" style="font-family: Arial, Helvetica, sans-serif; font-size: larger;background-color: white; padding: 5%;">
     <h4 > Check out our App (Coming soon) </h4>
-
+-->
 </div>
 <div class="parallax"></div>   <!-- PARALLAX EFFECT --->
 
