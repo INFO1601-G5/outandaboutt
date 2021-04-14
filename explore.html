@@ -9,6 +9,7 @@
   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/explore-tab.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -80,13 +81,59 @@
 <!-- End of navbar -->
 
 
-
+<div id="map"></div>
+<div id="placeDetail"></div>
 
 
 <div class="parallax"></div>  <!-- PARALLAX EFFECT --->
 
 <script src="js/locations-data.js"></script>
-<script src="js/main.js"></script>
+
+
+<script>
+  let map;
+  let place = locations[0];
+        function initMap(x,y){
+        map = new google.maps.Map(document.getElementById("map"), {
+          //center: {lat: locations[0].coords.latitude, lng: locations[0].coords.longitude},
+          center: {lat: 60, lng: 80},
+          //center: {lat: x,lng: y},
+          zoom: 8,
+        });
+      }
+
+      function showLocation(location){
+        let html = '';
+
+        html += `<div class="col">
+          <img src= "${location.img_url}" width = "50%" height = "50%">
+                </div>
+                <div class="col">
+                  <p> Name: ${location.name}</p>
+                  <p> Description: ${location.description}</p>
+                </div>`;
+        document.querySelector('#placeDetail').innerHTML = html;
+        
+        const x = new Number(location.latitude);
+        const y = new Number (location.longitude);
+        //initMap(x,y);
+      }
+      //initMap(50,80)
+      showLocation(place);
+
+
+
+      function showAllLocations(locations){
+        for (location in locations){
+          showLocation(location);
+        }
+      }
+  //showAllLocations(locations);
+</script>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
+ async
+></script>
 
 
   </footer>

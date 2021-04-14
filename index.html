@@ -182,6 +182,12 @@
 
 <script src="js/locations-data.js"></script>
 <script src="js/main.js"></script>
+<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
+ async
+></script>
+
 <footer class="container-fluid text-center" style="background-color: #212020; padding: 3%; margin-top:-2%;">
   <h3>Localdigital</h3>
   <p class="text-white">Kristian Richards</p>
@@ -191,5 +197,7 @@
   <p class="text-white">Aaron Payne</p>
 
   </footer>
+  
+
 </body>
 </html>

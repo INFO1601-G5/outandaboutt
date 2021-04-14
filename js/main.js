@@ -62,3 +62,9 @@
         showLocation(place);
       }
 
+      function showAllLocations(locations){
+        for (location in locations){
+          showLocation(location);
+        }
+      }
+
