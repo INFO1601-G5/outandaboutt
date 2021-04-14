@@ -1,0 +1,1 @@
+let tagList = ["adventure","beach","fun","dine","relax","tobago","wetlands","historical","urban"];

@@ -1,6 +1,6 @@
 //url=explore.html
 async function loadList(locations,tag){
-    let locList=document.querySelector("#myCarousel");
+    let locList=document.querySelector("#Tester");
     let html="";
 
     let tagArr=locations.filter(location => {
@@ -14,3 +14,5 @@ async function loadList(locations,tag){
    }
    locList.innerHTML=html;
   }
+
+ 

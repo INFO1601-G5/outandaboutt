@@ -74,6 +74,11 @@
                                            text-decoration: none;
                                            color: white;
                                            padding: 23px;">Reviews</a></li>
+                    <li><a href="#About_Us" style="display: block;
+                                           position: relative;
+                                           text-decoration: none;
+                                           color: white;
+                                           padding: 23px;">About us</a></li>  
                 </ul>
         </nav>
 
@@ -88,10 +93,11 @@
 <div class="parallax"></div>  <!-- PARALLAX EFFECT --->
 
 <script src="js/locations-data.js"></script>
-
+<script src="js/tagList.js"></script>
+<script src="js/site_Buttons.js"></script>
 
 <script>
-  let map;
+  /*let map;
   let place = locations[0];
         function initMap(x,y){
         map = new google.maps.Map(document.getElementById("map"), {
@@ -128,7 +134,20 @@
           showLocation(location);
         }
       }
-  //showAllLocations(locations);
+  //showAllLocations(locations);*/
+
+   async function loadExplore(tagList){
+    let explore=document.querySelector("#Tester");
+    let html="";
+
+    for(let tagg of tagList){
+      html+=`<ul>
+      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>
+      </ul>`;
+    }
+    explore.innerHTML=html;
+  }
+  //loadExplore(tagList);
 </script>
 <script
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
