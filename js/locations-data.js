@@ -93,7 +93,7 @@ let locations = [
 },
     {id:"6",
     name:"Paria Waterfall",
-    img_url:"http://nationaltrust.tt/home/wp-content/uploads/2016/01/Lopinot-5-1024x768.jpg",
+    img_url:"https://64.media.tumblr.com/39e8338c123cd5a6ae35f0151fa920eb/tumblr_mnyngbgJNb1qztq3so1_1280.jpg",
     coords: {
         latitude: 10.046682,
         longitude: -61.920396,
@@ -109,7 +109,7 @@ let locations = [
 
     {id:"7",
     name:"Mount St. Benedict",
-    img_url:"http://nationaltrust.tt/home/wp-content/uploads/2016/01/Lopinot-5-1024x768.jpg",
+    img_url:"http://nebula.wsimg.com/da2d1add8db33dc49880b01375a8598a?AccessKeyId=2198493294F8F5078821&disposition=0&alloworigin=1",
     coords: {
         latitude: 10.046682,
         longitude: -61.920396,
