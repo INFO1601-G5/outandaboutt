@@ -40,6 +40,7 @@
       }
 
       function showLocation(location){
+        let showLoc=document.querySelector("Carouselsect")
         let html = '';
 
         html += `<div class="col">
@@ -49,8 +50,8 @@
                   <p> Name: ${location.name}</p>
                   <p> Description: ${location.description}</p>
                 </div>`;
-        document.querySelector('#placeDetail').innerHTML = html;
-        
+        //document.querySelector('#placeDetail').innerHTML = html;
+        showLoc.innerHTML=html;
         const x = new Number(location.latitude);
         const y = new Number (location.longitude);
         //initMap(x,y);
