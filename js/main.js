@@ -10,8 +10,8 @@
                     <img src= "${featuredPlace.img_url}">
                 </a>
                 <div class="carousel-caption">
-                  <h3>${featuredPlace.name}</h3>
-                  <p>Read more...</p>
+                  <h1>${featuredPlace.name}</h1>
+                  <p>Read more on this featured experience...</p>
                 </div>`;
         document.querySelector('#item1').innerHTML = html;
 
@@ -23,8 +23,8 @@
                   <img src= "${featuredPlace.img_url}">
                 </a>
                 <div class="carousel-caption">
-                  <h3>${featuredPlace.name}</h3>
-                  <p>Read more...</p>
+                  <h1>${featuredPlace.name}</h1>
+                  <p>Read more on this featured experience...</p>
                 </div>`;
         document.querySelector('#item2').innerHTML = html;
       }
