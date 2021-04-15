@@ -50,7 +50,7 @@
 
   <form class="form">
   <input class="search-bar" placeholder="Search something.." id="Place_name"></input>
-  <input type="submit" value="GO" href=""></input>
+  <input type="submit" onclick="searchbut(locations)" value="GO" href=""></input>
 </form>
 <br>
 <br>
@@ -84,7 +84,7 @@
 </header>
 <!-- End of navbar -->
 
-
+<section id="homeinfo">
 <!-- Carousel-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style ="position: relative;">
     <!-- Indicators -->
@@ -124,7 +124,7 @@
             <div id="party" class ="image" style="margin-left: 23.5%">
               
                 <img class = "img_load" style = "background-image: url(https://www.dontforgettomove.com/wp-content/uploads/2015/02/half-moon-party-dates.jpg); background-position: center;">
-                <a href="explore.html#Tester" onclick="loadList(locations,'fun')" class="overlay">
+                <a href="#party" onclick="loadList(locations,'fun')" class="overlay">
                         <div class = "overlay">
                           
                 <h2> #Party </h2>
@@ -178,7 +178,7 @@
     <h4 > Check out our App (Coming soon) </h4>
 -->
 </div>
-
+</section>
 
 
 
@@ -186,6 +186,7 @@
 <div class="parallax"></div>  <!-- PARALLAX EFFECT --->
 
 <script src="js/locations-data.js"></script>
+<script src="js/tagList.js"></script>
 <script src="js/main.js"></script>
 <script src="js/site_Buttons.js"></script>
 <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
