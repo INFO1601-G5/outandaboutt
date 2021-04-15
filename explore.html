@@ -1,260 +1,390 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang ="en">
+  <head>
+    <title>Out N' AbouTT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
 
-<head>
-  <title>Out N' AbouTT</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-
-  <!-- --------------------------------------------------------------------------------------->
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-  <link href="css/main.css" rel="stylesheet" type="text/css" />
-  <link href="css/explore-tab.css" rel="stylesheet" type="text/css" />
+    <!-- --------------------------------------------------------------------------------------->
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/explore-tab.css" rel="stylesheet" type="text/css" />
 
 
 
-  <!-- CAROUSEL RELATED -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- CAROUSEL RELATED -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
-  <!-- FIREBASE -->
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="/__/firebase/8.3.2/firebase-app.js"></script>
+    <!-- FIREBASE -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.3.2/firebase-app.js"></script>
 
-  <!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="/__/firebase/8.3.2/firebase-analytics.js"></script>
+    <script src="/__/firebase/8.3.2/firebase-analytics.js"></script>
 
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 
+    
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
-  <!-- --------------------------------------------------------------------------------------->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/c148535417.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-
-  <style>
-    i {
-      cursor: pointer;
-      padding: 10px 12px 8px;
-      background: #fff;
-      border-radius: 50%;
-      display: inline-block;
-      margin: 0 0 15px;
-      color: #aaa;
-      transition: 0.2s;
-    }
-
-    i:hover {
-      color: #666;
-    }
-
-    i:before {
-      font-family: fontawesome;
-      content: "\f004";
-      font-style: normal;
-    }
-
-    span {
-      position: absolute;
-      bottom: 70px;
-      left: 0;
-      right: 0;
-      visibility: hidden;
-      transition: 0.6s;
-      z-index: -2;
-      font-size: 2px;
-      color: transparent;
-      font-weight: 400;
-    }
-
-    i.press {
-      animation: size 0.4s;
-      color: #e23b3b;
-    }
-
-    span.press {
-      bottom: 120px;
-      font-size: 14px;
-      visibility: visible;
-      animation: fade 1s;
-    }
-
-    @keyframes fade {
-      0% {
-        color: #fff;
-      }
-
-      50% {
-        color: #e23b3b;
-      }
-
-      100% {
-        color: #fff;
-      }
-    }
-
-    @keyframes size {
-      0% {
-        padding: 10px 12px 8px;
-      }
-
-      50% {
-        padding: 14px 16px 12px;
-        margin-top: -4px;
-      }
-
-      100% {
-        padding: 10px 12px 8px;
-      }
-    }
-
-
-    #map {
-      height: 100%;
-    }
-
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-
-
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      transition: 0.3s;
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    .card:hover {
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    img {
-      border-radius: 5px 5px 0 0;
-    }
-
-    .container {
-      padding: 2px 16px;
-    }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+   <!-- --------------------------------------------------------------------------------------->
+   
+   
+   
+   <style>
+     
   </style>
-</head>
+  </head>
+  
+  <body>
 
-<body>
-
-  <header>
-    <!-- search bar -->
+    <header>
+                           <!-- search bar -->
     <nav>
-      <a class="navbar-brand text-white" href="#" style="margin-top: 15px; margin-left: 10px">Out N' AbouTT</a>
+  <a class="navbar-brand text-white" href="#" style="margin-top: 15px; margin-left: 10px">Out N' AbouTT</a>
 
-      <form class="form">
-        <input class="search-bar" placeholder="Search something.."></input>
-        <input type="submit" value="GO" href=""></input>
-      </form>
-      <br>
-      <br>
-    </nav>
-    <nav>
+  <form class="form">
+  <input class="search-bar" placeholder="Search something.."></input>
+  <input type="submit" value="GO" href=""></input>
+</form>
+<br>
+<br>
+</nav>   
+        <nav>
 
-      <ul class="navigation">
-        <li><a href="index.html" style="display: block;
+                <ul class="navigation" style="display: flex;">
+                    <li><a href="index.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
                                            padding: 23px;">Home</a></li>
-        <li><a href="explore.html" style="display: block;
+                    <li><a href="explore.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
                                            padding: 23px;">Explore</a></li>
-        <li><a href="reviews.html" style="display: block;
+                    <li><a href="reviews.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
-                                           padding: 23px;">Reviews</a></li>
-        <li><a href="#About_Us" style="display: block;
+                                           padding: 23px;">Trending</a></li>
+                    <li><a href="#About_Us" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
-                                           padding: 23px;">About us</a></li>
-      </ul>
-    </nav>
+                                           padding: 23px;">About us</a></li>  
+                </ul>
+        </nav>
 
-  </header>
-  <!-- End of navbar -->
-  <div id="Tester"> </div>
+</header>
+<!-- End of navbar -->
+<!--<div id="Tester"> </div>
 
-  <div class="row" id="placeDetail"></div>
-  
+<div id="map"></div>
+<div id="placeDetail"></div>-->
+
+<div class="container1">
+    <div class="wrapper"> 
+	<div class="side">
+		<ul id="menu1" class="menu">
+			
+		</ul>
+	</div>
+</div>
+</div>
 
 
-  <div class="parallax"></div> <!-- PARALLAX EFFECT --->
+<script src="js/locations-data.js"></script>
+<script src="js/tagList.js"></script>
+<script src="js/site_Buttons.js"></script>
 
-  <script src="js/locations-data.js"></script>
-  <script src="js/places.js"></script>
-  <script src="js/tagList.js"></script>
-  <script src="js/site_Buttons.js"></script>
-  
+<script>
+  /*let map;
+  let place = locations[0];
+        function initMap(x,y){
+        map = new google.maps.Map(document.getElementById("map"), {
+          //center: {lat: locations[0].coords.latitude, lng: locations[0].coords.longitude},
+          center: {lat: 60, lng: 80},
+          //center: {lat: x,lng: y},
+          zoom: 8,
+        });
+      }
 
-  <script>
-    
-    async function loadList(locations, tag) {
-      let locList = document.querySelector("#Tester");
-      let html = "";
+      function showLocation(location){
+        let html = '';
 
-      let tagArr = locations.filter(location => {
-        return location.tags.type.includes(`${tag}`);
-      });
-      for (let tags of tagArr) {
-        //console.log(tags.name);
-        html += `<ul>
+        html += `<div class="col">
+          <img src= "${location.img_url}" width = "50%" height = "50%">
+                </div>
+                <div class="col">
+                  <p> Name: ${location.name}</p>
+                  <p> Description: ${location.description}</p>
+                </div>`;
+        document.querySelector('#placeDetail').innerHTML = html;
+        
+        const x = new Number(location.latitude);
+        const y = new Number (location.longitude);
+        //initMap(x,y);
+      }
+      //initMap(50,80)
+      showLocation(place);
+
+
+
+      function showAllLocations(locations){
+        for (location of locations){
+          showLocation(location);
+        }
+      }
+  //showAllLocations(locations);*/
+
+    async function loadList(locations,tag){
+    let locList=document.querySelector("#Tester");
+    let html="";
+
+    let tagArr=locations.filter(location => {
+  return location.tags.type.includes(`${tag}`);
+});
+   for(let tags of tagArr){
+     //console.log(tags.name);
+     html+=`<ul>
       <li><a href="#" >${tags.name}</a></li>
       </ul`;
-      }
-      locList.innerHTML = html;
+   }
+   locList.innerHTML=html;
+  }
+
+   async function loadExplore(tagList){
+    let explore=document.querySelector("#menu1");
+    let html="";
+
+    for(let tagg of tagList){
+      html+=`
+      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>`;
     }
-
-    async function loadExplore(tagList) {
-      let explore = document.querySelector("#Tester");
-      let html = "";
-
-      for (let tagg of tagList) {
-        html += `<ul>
-      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>
-      </ul>`;
-      }
-      explore.innerHTML = html;
-    }
-    //loadExplore(tagList);
-    showLocation(locations[0]);
-    //showAllLocations(locations);
-
-
-
-  
+    explore.innerHTML=html;
+  }
+  loadExplore(tagList);
 </script>
+
+<script>
+  // Check for valid email syntax
+function validateEmail(email) {
+  var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
+
+function closeForm() {
+  document.contactform.name.value = '';
+  document.contactform.email.value = '';
+  document.contactform.message.value = '';
+
+  $('.email').removeClass('typing');
+  $('.name').removeClass('typing');
+  $('.message').removeClass('typing');
+
+  $('.cd-popup').removeClass('is-visible');
+  $('.notification').addClass('is-visible');
+  $('#notification-text').html("Thanks for contacting us!");
+}
+
+$(document).ready(function($) {
+
+  /* ------------------------- */
+  /* Contact Form Interactions */
+  /* ------------------------- */
+  $('#contact').on('click', function(event) {
+    event.preventDefault();
+
+    $('#contactblurb').html('Questions, suggestions, and general comments are all welcome!');
+    $('.contact').addClass('is-visible');
+
+    if ($('#name').val().length != 0) {
+      $('.name').addClass('typing');
+    }
+    if ($('#email').val().length != 0) {
+      $('.email').addClass('typing');
+    }
+    if ($('#message').val().length != 0) {
+      $('.message').addClass('typing');
+    }
+  });
+
+  //close popup when clicking x or off popup
+  $('.cd-popup').on('click', function(event) {
+    if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
+      event.preventDefault();
+      $(this).removeClass('is-visible');
+    }
+  });
+
+  //close popup when clicking the esc keyboard button
+  $(document).keyup(function(event) {
+    if (event.which == '27') {
+      $('.cd-popup').removeClass('is-visible');
+    }
+  });
+
+  /* ------------------- */
+  /* Contact Form Labels */
+  /* ------------------- */
+  $('#name').keyup(function() {
+    $('.name').addClass('typing');
+    if ($(this).val().length == 0) {
+      $('.name').removeClass('typing');
+    }
+  });
+  $('#email').keyup(function() {
+    $('.email').addClass('typing');
+    if ($(this).val().length == 0) {
+      $('.email').removeClass('typing');
+    }
+  });
+  $('#message').keyup(function() {
+    $('.message').addClass('typing');
+    if ($(this).val().length == 0) {
+      $('.message').removeClass('typing');
+    }
+  });
+
+  /* ----------------- */
+  /* Handle submission */
+  /* ----------------- */
+  $('#contactform').submit(function() {
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var message = $('#message').val();
+    var human = $('#human:checked').val();
+
+    if (human) {
+      if (validateEmail(email)) {
+        if (name) {
+          if (message) {
+            
+            closeForm();
+
+          } else {
+            $('#notification-text').html("<strong>Please let us know what you're thinking!</strong>");
+            $('.notification').addClass('is-visible');
+          }
+        } else {
+          $('#notification-text').html('<strong>Please provide a name.</strong>');
+          $('.notification').addClass('is-visible');
+        }
+      } else {
+        $('#notification-text').html('<strong>Please use a valid email address.</strong>');
+        $('.notification').addClass('is-visible');
+      }
+    } else {
+      $('#notification-text').html('<h3><strong><em>Warning: Please prove you are a human and not a robot.</em></strong></h3>');
+      $('.notification').addClass('is-visible');
+    }
+
+    return false;
+  });
+});
+</script>
+
 <script
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
  async
 ></script>
 
+</body>
+<footer id="About_Us" class="container-fluid text-center" style="background-color: #212020; padding: 3%; margin-top:-2%; color: white;">
+
+  <article>
+<h3>Localdigital</h3>
+  <p class="text-white">Kristian Richards</p>
+  <p class="text-white">Kareem Williams</p>
+  <p class="text-white">Tamia Williams</p>
+  <p class="text-white">Akshana Mano</p>
+  <p class="text-white">Aaron Payne</p>
+  </article>
+
+  <article>
+<div class="contact-container">
+  <h2>You know about a place or Event that should be on this site... well let us know.</h2>
+  <button class="actions">
+    <a href="#" id="contact" class="button big">Contact Us</a>
+  </button>
+</div>
+
+<div class="cd-popup contact" role="alert">
+  <form name="contactform" id="contactform" class="contact-form">
+    <div class="cd-popup-container" style="">
+      <p style="">
+        <a href="" class="cd-popup-close cd-close-button">
+          <i class="fa fa-times" style="pointer-events:none;"></i>
+        </a>
+      </p>
+
+      <div class="name">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" style="border: none !important;
+  outline: none !important;
+  resize: none !important;
+  width: 100% !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;"/>
+      </div>
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" style="border: none !important;
+  outline: none !important;
+  resize: none !important;
+  width: 100% !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;"/>
+      </div>
+      <div class="message">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" name="message"  style="border: none !important;
+  outline: none !important;
+  resize: none !important;
+  width: 100% !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;"></textarea>
+      </div>
+      <br>
+      <div style="text-align:left">
+        <input type="checkbox" id="human" name="human" />
+        <label for="human">I am a human and not a robot.</label>
+      </div>
+      <br>
+      <div class="submit">
+        <p class="user-message" id="contactblurb" style="color: black;"> Questions, suggestions, and general comments are all welcome!</p>
+        <input type="submit" name="submit" id="submit" value="Send" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="cd-popup notification" role="alert">
+  <div class="cd-popup-container">
+    <a href="" class="cd-popup-close cd-close-button"><i class="fa fa-times" style="pointer-events:none;"></i></a>
+    <p>
+      <h3 id="notification-text">Thanks for getting in touch!</h3>
+    </p>
+  </div>
+</div>
+  </article>
 
   </footer>
-</body>
-
+  
 </html>

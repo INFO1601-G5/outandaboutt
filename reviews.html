@@ -49,15 +49,15 @@
   <a class="navbar-brand text-white" href="#" style="margin-top: 15px; margin-left: 10px">Out N' AbouTT</a>
 
   <form class="form">
-  <input class="search-bar" placeholder="Search something.."></input>
-  <input type="submit" value="GO" href=""></input>
+  <input class="search-bar" placeholder="Search something.." id="Place_name"></input>
+  <input type="submit" onclick="searchbut(locations)" value="GO" href=""></input>
 </form>
 <br>
 <br>
 </nav>   
         <nav>
 
-                <ul class="navigation">
+                <ul class="navigation" style="display: flex;">
                     <li><a href="index.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
@@ -72,7 +72,13 @@
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
-                                           padding: 23px;">Reviews</a></li>
+                                           padding: 23px;"
+                                           onclick="sortTrending(locations)">Trending</a></li>
+                    <li><a href="place.html" style="display: block;
+                                           position: relative;
+                                           text-decoration: none;
+                                           color: white;
+                                           padding: 23px;">About us</a></li>                                           
                 </ul>
         </nav>
 

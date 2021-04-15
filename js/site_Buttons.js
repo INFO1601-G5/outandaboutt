@@ -16,13 +16,12 @@ async function loadList(locations,tag){
   }
 
  async function loadExplore(tagList){
-    let explore=document.querySelector("#homeinfo");
+    let explore=document.querySelector("#menu1");
     let html="";
 
     for(let tagg of tagList){
-      html+=`<ul>
-      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>
-      </ul>`;
+      html+=`
+      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>`;
     }
     explore.innerHTML=html;
   }
@@ -33,13 +32,12 @@ async function loadList(locations,tag){
       return place_name.value;
   }
   async function searchbut(locations){
-    //console.log("HERE");
-    const name=getName().toUpperCase();
+    let name=getName().toUpperCase();
     let locSearch=document.querySelector("#homeinfo");
     let html="";
 
     let nameArr=locations.filter(location => {
-  return location.name.toUpperCase().includes(`${name}`)  || location.tags.type.toUpperCase().includes(`${name}`);
+  return location.name.toUpperCase().includes(`${name}`) || `${location.tags.type}`.toUpperCase().includes(`${name}`);
 });
 
  for(let names of nameArr){
