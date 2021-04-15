@@ -1,176 +1,256 @@
 <!DOCTYPE html>
-<html lang ="en">
-  <head>
-    <title>Out N' AbouTT</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+<html lang="en">
 
-    <!-- --------------------------------------------------------------------------------------->
-  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
-    <link href="css/explore-tab.css" rel="stylesheet" type="text/css" />
+<head>
+  <title>Out N' AbouTT</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
 
+  <!-- --------------------------------------------------------------------------------------->
 
-
-    <!-- CAROUSEL RELATED -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link href="css/main.css" rel="stylesheet" type="text/css" />
+  <link href="css/explore-tab.css" rel="stylesheet" type="text/css" />
 
 
-    <!-- FIREBASE -->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/8.3.2/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- CAROUSEL RELATED -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+  <!-- FIREBASE -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/8.3.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="/__/firebase/8.3.2/firebase-analytics.js"></script>
+  <script src="/__/firebase/8.3.2/firebase-analytics.js"></script>
 
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
 
-    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-   <!-- --------------------------------------------------------------------------------------->
-   
-   
-   
-   <style>
-     
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <!-- --------------------------------------------------------------------------------------->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/c148535417.js" crossorigin="anonymous"></script>
+
+  <style>
+    i {
+      cursor: pointer;
+      padding: 10px 12px 8px;
+      background: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 0 15px;
+      color: #aaa;
+      transition: 0.2s;
+    }
+
+    i:hover {
+      color: #666;
+    }
+
+    i:before {
+      font-family: fontawesome;
+      content: "\f004";
+      font-style: normal;
+    }
+
+    span {
+      position: absolute;
+      bottom: 70px;
+      left: 0;
+      right: 0;
+      visibility: hidden;
+      transition: 0.6s;
+      z-index: -2;
+      font-size: 2px;
+      color: transparent;
+      font-weight: 400;
+    }
+
+    i.press {
+      animation: size 0.4s;
+      color: #e23b3b;
+    }
+
+    span.press {
+      bottom: 120px;
+      font-size: 14px;
+      visibility: visible;
+      animation: fade 1s;
+    }
+
+    @keyframes fade {
+      0% {
+        color: #fff;
+      }
+
+      50% {
+        color: #e23b3b;
+      }
+
+      100% {
+        color: #fff;
+      }
+    }
+
+    @keyframes size {
+      0% {
+        padding: 10px 12px 8px;
+      }
+
+      50% {
+        padding: 14px 16px 12px;
+        margin-top: -4px;
+      }
+
+      100% {
+        padding: 10px 12px 8px;
+      }
+    }
+
+
+    #map {
+      height: 100%;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      border-radius: 5px 5px 0 0;
+    }
+
+    .container {
+      padding: 2px 16px;
+    }
   </style>
-  </head>
-  
-  <body>
+</head>
 
-    <header>
-                           <!-- search bar -->
+<body>
+
+  <header>
+    <!-- search bar -->
     <nav>
-  <a class="navbar-brand text-white" href="#" style="margin-top: 15px; margin-left: 10px">Out N' AbouTT</a>
+      <a class="navbar-brand text-white" href="#" style="margin-top: 15px; margin-left: 10px">Out N' AbouTT</a>
 
-  <form class="form">
-  <input class="search-bar" placeholder="Search something.."></input>
-  <input type="submit" value="GO" href=""></input>
-</form>
-<br>
-<br>
-</nav>   
-        <nav>
+      <form class="form">
+        <input class="search-bar" placeholder="Search something.."></input>
+        <input type="submit" value="GO" href=""></input>
+      </form>
+      <br>
+      <br>
+    </nav>
+    <nav>
 
-                <ul class="navigation">
-                    <li><a href="index.html" style="display: block;
+      <ul class="navigation">
+        <li><a href="index.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
                                            padding: 23px;">Home</a></li>
-                    <li><a href="explore.html" style="display: block;
+        <li><a href="explore.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
                                            padding: 23px;">Explore</a></li>
-                    <li><a href="reviews.html" style="display: block;
+        <li><a href="reviews.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
                                            padding: 23px;">Reviews</a></li>
-                    <li><a href="#About_Us" style="display: block;
+        <li><a href="#About_Us" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
-                                           padding: 23px;">About us</a></li>  
-                </ul>
-        </nav>
+                                           padding: 23px;">About us</a></li>
+      </ul>
+    </nav>
 
-</header>
-<!-- End of navbar -->
-<div id="Tester"> </div>
+  </header>
+  <!-- End of navbar -->
+  <div id="Tester"> </div>
 
-<div id="map"></div>
-<div id="placeDetail"></div>
-
-
-<div class="parallax"></div>  <!-- PARALLAX EFFECT --->
-
-<script src="js/locations-data.js"></script>
-<script src="js/tagList.js"></script>
-<script src="js/site_Buttons.js"></script>
-
-<script>
-  /*let map;
-  let place = locations[0];
-        function initMap(x,y){
-        map = new google.maps.Map(document.getElementById("map"), {
-          //center: {lat: locations[0].coords.latitude, lng: locations[0].coords.longitude},
-          center: {lat: 60, lng: 80},
-          //center: {lat: x,lng: y},
-          zoom: 8,
-        });
-      }
-
-      function showLocation(location){
-        let html = '';
-
-        html += `<div class="col">
-          <img src= "${location.img_url}" width = "50%" height = "50%">
-                </div>
-                <div class="col">
-                  <p> Name: ${location.name}</p>
-                  <p> Description: ${location.description}</p>
-                </div>`;
-        document.querySelector('#placeDetail').innerHTML = html;
-        
-        const x = new Number(location.latitude);
-        const y = new Number (location.longitude);
-        //initMap(x,y);
-      }
-      //initMap(50,80)
-      showLocation(place);
+  <div class="row" id="placeDetail"></div>
+  
 
 
+  <div class="parallax"></div> <!-- PARALLAX EFFECT --->
 
-      function showAllLocations(locations){
-        for (location of locations){
-          showLocation(location);
-        }
-      }
-  //showAllLocations(locations);*/
+  <script src="js/locations-data.js"></script>
+  <script src="js/places.js"></script>
+  <script src="js/tagList.js"></script>
+  <script src="js/site_Buttons.js"></script>
+  
 
-    async function loadList(locations,tag){
-    let locList=document.querySelector("#Tester");
-    let html="";
+  <script>
+    
+    async function loadList(locations, tag) {
+      let locList = document.querySelector("#Tester");
+      let html = "";
 
-    let tagArr=locations.filter(location => {
-  return location.tags.type.includes(`${tag}`);
-});
-   for(let tags of tagArr){
-     //console.log(tags.name);
-     html+=`<ul>
+      let tagArr = locations.filter(location => {
+        return location.tags.type.includes(`${tag}`);
+      });
+      for (let tags of tagArr) {
+        //console.log(tags.name);
+        html += `<ul>
       <li><a href="#" >${tags.name}</a></li>
       </ul`;
-   }
-   locList.innerHTML=html;
-  }
+      }
+      locList.innerHTML = html;
+    }
 
-   async function loadExplore(tagList){
-    let explore=document.querySelector("#Tester");
-    let html="";
+    async function loadExplore(tagList) {
+      let explore = document.querySelector("#Tester");
+      let html = "";
 
-    for(let tagg of tagList){
-      html+=`<ul>
+      for (let tagg of tagList) {
+        html += `<ul>
       <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>
       </ul>`;
+      }
+      explore.innerHTML = html;
     }
-    explore.innerHTML=html;
-  }
-  loadExplore(tagList);
-</script>
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
- async
-></script>
+    loadExplore(tagList);
+    showLocation(locations[6]);
+    //showAllLocations(locations);
+
+
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
+    async></script>
 
 
   </footer>
 </body>
+
 </html>

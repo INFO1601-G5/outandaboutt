@@ -9,7 +9,7 @@ async function loadList(locations,tag){
    for(let tags of tagArr){
      //console.log(tags.name);
      html+=`<ul>
-      <li><a href="#" >${tags.name}</a></li>
+      <li><a href="#" onclick="getLocation(${placeid})">${tags.name}</a></li>
       </ul`;
    }
    locList.innerHTML=html;
@@ -45,7 +45,7 @@ async function loadList(locations,tag){
  for(let names of nameArr){
      console.log(names.name);
      html+=`<ul>
-      <li><a href="#" onclick="">${names.name}</a></li>
+      <li><a href="#" onclick="getLocation(${placeid})">${names.name}</a></li>
       </ul`;
    }
    locSearch.innerHTML=html;
@@ -60,7 +60,7 @@ async  function sortTrending(locations){
     for(let member of ascending){
       console.log(`${member.name}    ${member.tags.popularity}` );
       html+=`<ul>
-      <li><a href="#" onclick="">${member.name}</a></li>
+      <li><a href="#" onclick="getLocation(${placeid})">${member.name}</a></li>
       </ul`;
     }
     trendlist.innerHTML=html;
