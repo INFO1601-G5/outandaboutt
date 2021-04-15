@@ -21,8 +21,8 @@ let locations = [
     name:"Fort King George",
     img_url:"http://nationaltrust.tt/home/wp-content/uploads/2016/01/Tobago-Fort-King-George-7-1024x678.jpg?x65015",
     coords: {
-        latitude: 11.177625,
-        longitude: -60.7271083,
+        longitude: 11.177625,
+        latitude: -60.7271083,
     },
     description:"Fort King George is at the top a hill about 400 feet above Scarborough - the capital of Tobago, Rockley Bay and the harbour. It was built by the British as a strategic vantage point in the 1770s and was named in honour of King George III who reigned over Great Britain and Ireland from 1760 to 1820.",
     tags: {

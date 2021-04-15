@@ -1,11 +1,14 @@
-function initMap(x, y) {
+function initMap(a,b) {
+    
+    //const bangalore = { lat: 12.97, lng: 77.59 };
+
     const mapOptions = {
       zoom: 15,
-      center: { lat: x, lng: y },
+      center: {lat: (a*1), lng: (1*b)},
     };
-    const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    let map = new google.maps.Map(document.getElementById("map"), mapOptions);
     const marker = new google.maps.Marker({
-      position: { lat: x, lng: y },
+      position: {lat: a, lng: b},
       map: map,
     });
   
@@ -51,9 +54,12 @@ function initMap(x, y) {
   </div>`;
     document.querySelector('#placeDetail').innerHTML = html;
   
-    const x = new Number(location.coords.latitude);
-    const y = new Number (location.coords.longitude);
-    initMap(x, y);
+    //const x = new Number(location.coords.latitude);
+    //const y = new Number (location.coords.longitude);
+
+    //var placeLatlng = new google.maps.LatLng(location[0].coords.longitude, location[0].coords.latitude);
+
+    initMap(location.coords.longitude, locations.coords.longitude);
   }
   
   function getLocation(id) {
