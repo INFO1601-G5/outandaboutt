@@ -35,14 +35,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
    <!-- --------------------------------------------------------------------------------------->
    
-   
-   
-   <style>
-     
-  </style>
   </head>
   
-  <body>
+  <body style="height: 100%">
 
     <header>
                            <!-- search bar -->
@@ -50,8 +45,8 @@
   <a class="navbar-brand text-white" href="#" style="margin-top: 15px; margin-left: 10px">Out N' AbouTT</a>
 
   <form class="form">
-  <input class="search-bar" placeholder="Search something.."></input>
-  <input type="submit" value="GO" href=""></input>
+  <input class="search-bar" placeholder="Search something.." id="Place_name"></input>
+  <input type="submit" onclick="searchbut(locations)" value="GO" href=""></input>
 </form>
 <br>
 <br>
@@ -73,112 +68,39 @@
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
-                                           padding: 23px;">Trending</a></li>
+                                           padding: 23px;"
+                                           onclick="sortTrending(locations)">Trending</a></li>
                     <li><a href="#About_Us" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
-                                           padding: 23px;">About us</a></li>  
+                                           padding: 23px;">About us</a></li>                                           
                 </ul>
         </nav>
 
 </header>
-<!-- End of navbar -->
-<!--<div id="Tester"> </div>
 
-<div id="map"></div>
-<div id="placeDetail"></div>-->
-  <div class="container1">
-    <div class="wrapper"> 
-	<div class="side">
-		<ul id="menu1" class="menu">
-			
-		</ul>
-	</div>
- 
-</div>
-<div style="height:30%; width: 20%; background-color: #A16641;">
 
-   </div>
+
+
+<div style="height: 100%; width: 100%">
+
+  <div class="container2">
+
+  </div>
+    <div>
+      <img class = "img_load" style = "background-image: url(https://www.dontforgettomove.com/wp-content/uploads/2015/02/half-moon-party-dates.jpg);  width: 95%; height: 30%">
+    </div>
+    <div>
+
+    </div>
 </div>
 
-   
 
 
 
 
-<script src="js/locations-data.js"></script>
-<script src="js/tagList.js"></script>
-<script src="js/site_Buttons.js"></script>
 
-<script>
-  /*let map;
-  let place = locations[0];
-        function initMap(x,y){
-        map = new google.maps.Map(document.getElementById("map"), {
-          //center: {lat: locations[0].coords.latitude, lng: locations[0].coords.longitude},
-          center: {lat: 60, lng: 80},
-          //center: {lat: x,lng: y},
-          zoom: 8,
-        });
-      }
-
-      function showLocation(location){
-        let html = '';
-
-        html += `<div class="col">
-          <img src= "${location.img_url}" width = "50%" height = "50%">
-                </div>
-                <div class="col">
-                  <p> Name: ${location.name}</p>
-                  <p> Description: ${location.description}</p>
-                </div>`;
-        document.querySelector('#placeDetail').innerHTML = html;
-        
-        const x = new Number(location.latitude);
-        const y = new Number (location.longitude);
-        //initMap(x,y);
-      }
-      //initMap(50,80)
-      showLocation(place);
-
-
-
-      function showAllLocations(locations){
-        for (location of locations){
-          showLocation(location);
-        }
-      }
-  //showAllLocations(locations);*/
-
-    async function loadList(locations,tag){
-    let locList=document.querySelector("#Tester");
-    let html="";
-
-    let tagArr=locations.filter(location => {
-  return location.tags.type.includes(`${tag}`);
-});
-   for(let tags of tagArr){
-     //console.log(tags.name);
-     html+=`<ul>
-      <li><a href="#" >${tags.name}</a></li>
-      </ul`;
-   }
-   locList.innerHTML=html;
-  }
-
-   async function loadExplore(tagList){
-    let explore=document.querySelector("#menu1");
-    let html="";
-
-    for(let tagg of tagList){
-      html+=`
-      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>`;
-    }
-    explore.innerHTML=html;
-  }
-  loadExplore(tagList);
-</script>
 
 <script>
   // Check for valid email syntax
@@ -298,10 +220,6 @@ $(document).ready(function($) {
 });
 </script>
 
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_jF69AJd7zitOuYV6kpgwA_7g1IxoQc8&callback=initMap&libraries=&v=weekly"
- async
-></script>
 
 </body>
 <footer id="About_Us" class="container-fluid text-center" style="background-color: #212020; padding: 3%; margin-top:-2%; color: white;">
