@@ -39,7 +39,7 @@ async function loadList(locations,tag){
     let html="";
 
     let nameArr=locations.filter(location => {
-  return location.name.toUpperCase().includes(`${name}`);
+  return location.name.toUpperCase().includes(`${name}`)  || location.tags.type.toUpperCase().includes(`${name}`);
 });
 
  for(let names of nameArr){
@@ -50,3 +50,18 @@ async function loadList(locations,tag){
    }
    locSearch.innerHTML=html;
   }
+
+async  function sortTrending(locations){
+  let ascending = locations.sort((a, b) => b.tags.popularity - a.tags.popularity )
+
+    let trendlist=document.querySelector("#Tester");
+    let html="";
+
+    for(let member of ascending){
+      console.log(`${member.name}    ${member.tags.popularity}` );
+      html+=`<ul>
+      <li><a href="#" onclick="">${member.name}</a></li>
+      </ul`;
+    }
+    trendlist.innerHTML=html;
+}
