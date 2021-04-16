@@ -20,8 +20,10 @@ async function loadList(locations,tag){
     let html="";
 
     for(let tagg of tagList){
+      tagname=tagg.charAt(0).toUpperCase() + tagg.slice(1);
+      console.log(tagname);
       html+=`
-      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagg}</a></li>`;
+      <li><a href="#" onclick="loadList(locations,'${tagg}')">${tagname}</a></li>`;
     }
     explore.innerHTML=html;
   }
