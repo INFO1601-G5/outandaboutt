@@ -73,7 +73,7 @@
                                            text-decoration: none;
                                            color: white;
                                            padding: 23px;"
-                                           onclick="sortTrending(locations)">Trending</a></li>
+                                          >Trending</a></li>
                     <li><a href="place.html" style="display: block;
                                            position: relative;
                                            text-decoration: none;
@@ -84,12 +84,38 @@
 
 </header>
 <!-- End of navbar -->
-
+<div>
+  <h2>Welcome to our list in order from highest to lowest rated!</h2>
+<div id="TrendList"> 
+ 
+</div>
+</div>
 <div class="parallax"></div>  <!-- PARALLAX EFFECT --->
 
 <script src="js/locations-data.js"></script>
 <script src="js/main.js"></script>
 
+<script>
+async function sortTrending(locations){
+  let ascending = locations.sort((a, b) => b.tags.popularity - a.tags.popularity )
+
+    let trendlist=document.querySelector("#TrendList");
+    let html="";
+
+    for(let member of ascending){
+      console.log(`${member.name}    ${member.tags.popularity}` );
+      html+=`<ul>
+      <li><a href="#" style="display: block;
+                      position: relative;
+                      text-decoration: none;
+                      color: white;
+                      padding: 23px;"onclick="getLocation(${member.name})">${member.name}</a></li>
+      </ul`;
+    }
+    trendlist.innerHTML=html;
+}
+sortTrending(locations);
+</script>
 
   </footer>
 </body>

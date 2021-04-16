@@ -51,17 +51,4 @@
    locSearch.innerHTML=html;
   }
 
-async  function sortTrending(locations){
-  let ascending = locations.sort((a, b) => b.tags.popularity - a.tags.popularity )
-
-    let trendlist=document.querySelector("#Tester");
-    let html="";
-
-    for(let member of ascending){
-      console.log(`${member.name}    ${member.tags.popularity}` );
-      html+=`<ul>
-      <li><a href="#" onclick="getLocation(${placeid})">${member.name}</a></li>
-      </ul`;
-    }
-    trendlist.innerHTML=html;
-}
+  
