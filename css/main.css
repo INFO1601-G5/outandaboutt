@@ -119,21 +119,19 @@ li:hover{
 
   .parallax {
   /* The image used */
-  background-image: url('https://www.eturbonews.com/wp-content/uploads/2019/08/independent-650x1156.jpeg');
+  background-image: url('https://scontent.fpos3-1.fna.fbcdn.net/v/t31.18172-8/17436338_281398422295568_3449239431408161300_o.jpg?_nc_cat=106&ccb=1-3&_nc_sid=e3f864&_nc_ohc=Hcc9urGgz5wAX-MfkPq&_nc_ht=scontent.fpos3-1.fna&oh=a39c79ec3990e453954b293838c7d37c&oe=60983F19');
 
   /* Full height */
   height: 88.5%; 
   width: 100%; 
-  padding-top: 5%;
-  margin: 0;; 
+  padding-top: 0;
+  margin: 0; 
 
   /* Creates the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 50%;
-
-  back 
+  background-size: 100%;
 
 }
 /* --------- PARALLAX EFFECT ENDING -----------*/
@@ -145,8 +143,8 @@ li:hover{
 
       height: 45%; 
   width: 100%; 
-  padding-left:5%;
-  padding-top:5%;
+  padding-left: 5%;
+  padding-top: 5%;
 
   background-attachment: fixed;
   background-position: center;
