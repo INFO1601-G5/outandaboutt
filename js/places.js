@@ -1,34 +1,41 @@
-function initMap(a,b) {
-    
-    //const bangalore = { lat: 12.97, lng: 77.59 };
 
-    const mapOptions = {
-      zoom: 15,
-      center: {lat: (a*1), lng: (1*b)},
-    };
-    let map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    const marker = new google.maps.Marker({
-      position: {lat: a, lng: b},
-      map: map,
-    });
-  
-    const infowindow = new google.maps.InfoWindow({
-      content: "<p>Marker Location:" + marker.getPosition() + "</p>",
-    });
-    google.maps.event.addListener(marker, "click", () => {
-      infowindow.open(map, marker);
-    });
-  }
-  
-  function showLocation(location) {
-    let locLoad=document.querySelector("#placeDetail")
-    let html = '';
-    
-    html += `<div class="col-sm-8">
-    <h1>${location.name}</h1>
-      <div>
-        <i></i>
-        <span>liked!</span>
+function initMap(a, b) {
+
+  //const bangalore = { lat: 12.97, lng: 77.59 };
+
+  const mapOptions = {
+    zoom: 15,
+    center: { lat: 11.177625, lng: -60.7271083 },
+  };
+  let map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  const marker = new google.maps.Marker({
+    position: { lat: 11.177625, lng: -60.7271083 },
+    map: map,
+  });
+
+  const infowindow = new google.maps.InfoWindow({
+    content: "<p>Marker Location:" + marker.getPosition() + "</p>",
+  });
+  google.maps.event.addListener(marker, "click", () => {
+    infowindow.open(map, marker);
+  });
+}
+
+function showLocation(location) {
+  let locLoad = document.querySelector("#placeDetail")
+  let html = '';
+
+  html += `<div class="col-sm-8">
+    <h1>${location.name}
+      
+      <span>
+      <a href="javascript:void(0);" class="like-button">
+        <i class="material-icons not-liked bouncy">favorite_border</i>
+        <i class="material-icons is-liked bouncy">favorite</i>
+        <span class="like-overlay"></span>
+      </a>
+    </span>
+    </h1>
       </div>
     
       <div class="container">
@@ -53,24 +60,24 @@ function initMap(a,b) {
       <div id= map class="card"></div>
     
   </div>`;
-    locLoad.innerHTML = html;
-  
-    //const x = new Number(location.coords.latitude);
-    //const y = new Number (location.coords.longitude);
+  locLoad.innerHTML = html;
 
-    //var placeLatlng = new google.maps.LatLng(location[0].coords.longitude, location[0].coords.latitude);
+  //const x = new Number(location.coords.latitude);
+  //const y = new Number (location.coords.longitude);
 
-    initMap(location.coords.longitude, locations.coords.longitude);
+  //var placeLatlng = new google.maps.LatLng(location[0].coords.longitude, location[0].coords.latitude);
+
+  initMap(location.coords.longitude, location.coords.longitude);
+}
+
+function getLocation(id) {
+  let thisPlace = locations[id];
+  showLocation(thisPlace);
+}
+
+
+function showAllLocations(locations) {
+  for (let thislocation of locations) {
+    showLocation(thislocation);
   }
-  
-  function getLocation(id) {
-    let thisPlace = locations[id - 1];
-    showLocation(thisPlace);
-  }
-  
-  
-  function showAllLocations(locations) {
-    for (let thislocation of locations) {
-      showLocation(thislocation);
-    }
-  }
+}
