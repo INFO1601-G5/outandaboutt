@@ -80,7 +80,7 @@
                                            color: white;
                                            padding: 23px;"
                                           >Trending</a></li>
-                    <li><a href="place.html" style="display: block;
+                    <li><a href="#About_Us" style="display: block;
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
@@ -122,7 +122,93 @@ async function sortTrending(locations){
 }
 sortTrending(locations);
 </script>
+<footer id="About_Us" class="container-fluid text-center" style="background-color: #212020; padding: 3%; margin-top:-2%; color: white;">
 
+  <article>
+<h3>Localdigital</h3>
+  <p class="text-white">Kristian Richards</p>
+  <p class="text-white">Kareem Williams</p>
+  <p class="text-white">Tamia Williams</p>
+  <p class="text-white">Akshana Mano</p>
+  <p class="text-white">Aaron Payne</p>
+  </article>
+
+  <article>
+<div class="contact-container">
+  <h2>You know about a place or Event that should be on this site... well let us know.</h2>
+  <button class="actions">
+    <a href="#" id="contact" class="button big">Contact Us</a>
+  </button>
+</div>
+
+<div class="cd-popup contact" role="alert">
+  <form name="contactform" id="contactform" class="contact-form">
+    <div class="cd-popup-container" style="">
+      <p style="">
+        <a href="" class="cd-popup-close cd-close-button">
+          <i class="fa fa-times" style="pointer-events:none;"></i>
+        </a>
+      </p>
+
+      <div class="name">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" style="border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;"/>
+      </div>
+      <div class="email">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" style="border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;"/>
+      </div>
+      <div class="message">
+        <label for="message">Message</label>
+        <textarea name="message" id="message" name="message"  style="border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;"></textarea>
+      </div>
+      <br>
+      <div style="text-align:left">
+        <input type="checkbox" id="human" name="human" />
+        <label for="human">I am a human and not a robot.</label>
+      </div>
+      <br>
+      <div class="submit">
+        <p class="user-message" id="contactblurb" style="color: black;"> Questions, suggestions, and general comments are all welcome!</p>
+        <input type="submit" name="submit" id="submit" value="Send" />
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="cd-popup notification" role="alert">
+  <div class="cd-popup-container">
+    <a href="" class="cd-popup-close cd-close-button"><i class="fa fa-times" style="pointer-events:none;"></i></a>
+    <p>
+      <h3 id="notification-text">Thanks for getting in touch!</h3>
+    </p>
+  </div>
+</div>
+  </article>
   </footer>
 </body>
 </html>
