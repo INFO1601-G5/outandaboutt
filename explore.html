@@ -95,9 +95,9 @@
 			
 		</ul>
 	</div>
- <div class="placeList"style="height:30%; width: 20%; background-color: #A16641; margin-left: 32%;" >
-   <ul >
-			<h3> This is a very respectful group of young people. </h3>
+ <div id="Listing" class="placeList"style="height:30%; width: 20%; background-color: #A16641; margin-left: 32%;" >
+   <ul>
+		
 		</ul>
 
    </div>
@@ -155,17 +155,21 @@
   //showAllLocations(locations);*/
 
     async function loadList(locations,tag){
-    let locList=document.querySelector("#Tester");
+    let locList=document.querySelector("#Listing");
     let html="";
 
     let tagArr=locations.filter(location => {
   return location.tags.type.includes(`${tag}`);
 });
    for(let tags of tagArr){
-     //console.log(tags.name);
-     html+=`<ul>
-      <li><a href="#" >${tags.name}</a></li>
-      </ul`;
+    console.log(tags.name);
+     html+=`
+      <li><a href="place.html" style="display: block;
+                                           position: relative;
+                                           text-decoration: none;
+                                           color: white;"
+                                           onclick="showLocation(${tags.name})">${tags.name}</a></li>
+      `;
    }
    locList.innerHTML=html;
   }
@@ -182,7 +186,8 @@
                                            position: relative;
                                            text-decoration: none;
                                            color: white;
-                                           padding: 23px; onclick="loadList(locations,'${tagg}')">${tagname}</a></li>`;
+                                           padding: 23px;"
+                                           onclick="loadList(locations,'${tagg}')">${tagname}</a></li>`;
     }
     explore.innerHTML=html;
   }

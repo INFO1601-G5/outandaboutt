@@ -1,5 +1,5 @@
 //url=explore.html
-async function loadList(locations,tag){
+/*async function loadList(locations,tag){
     let locList=document.querySelector("#homeinfo");
     let html="";
 
@@ -13,7 +13,7 @@ async function loadList(locations,tag){
       </ul`;
    }
    locList.innerHTML=html;
-  }
+  }*/
 
  async function loadExplore(tagList){
     let explore=document.querySelector("#menu1");
