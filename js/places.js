@@ -21,8 +21,9 @@ function initMap(a,b) {
   }
   
   function showLocation(location) {
+    let locLoad=document.querySelector("#placeDetail")
     let html = '';
-  
+    
     html += `<div class="col-sm-8">
     <h1>${location.name}</h1>
       <div>
@@ -52,7 +53,7 @@ function initMap(a,b) {
       <div id= map class="card"></div>
     
   </div>`;
-    document.querySelector('#placeDetail').innerHTML = html;
+    locLoad.innerHTML = html;
   
     //const x = new Number(location.coords.latitude);
     //const y = new Number (location.coords.longitude);
